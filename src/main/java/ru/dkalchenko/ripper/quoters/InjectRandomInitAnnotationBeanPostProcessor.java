@@ -7,7 +7,7 @@ import org.springframework.util.ReflectionUtils;
 import java.lang.reflect.Field;
 import java.util.Random;
 
-public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProcessor {
+public class InjectRandomInitAnnotationBeanPostProcessor implements BeanPostProcessor {
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) {
