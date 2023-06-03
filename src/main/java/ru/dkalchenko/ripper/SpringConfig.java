@@ -2,10 +2,7 @@ package ru.dkalchenko.ripper;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.dkalchenko.ripper.quoters.InjectRandomInitAnnotationBeanPostProcessor;
-import ru.dkalchenko.ripper.quoters.PostProxyInvokerContextListener;
-import ru.dkalchenko.ripper.quoters.ProfilingHandlerBeanPostProcessor;
-import ru.dkalchenko.ripper.quoters.TerminatorQuoter;
+import ru.dkalchenko.ripper.quoters.*;
 
 @Configuration
 public class SpringConfig {
@@ -13,6 +10,11 @@ public class SpringConfig {
     @Bean
     public InjectRandomInitAnnotationBeanPostProcessor beanPostProcessor() {
         return new InjectRandomInitAnnotationBeanPostProcessor();
+    }
+
+    @Bean
+    public DeprecationHandlerBeanFactoryPostProcessor deprecationHandlerBeanFactoryPostProcessor() {
+        return new DeprecationHandlerBeanFactoryPostProcessor();
     }
 
     @Bean
